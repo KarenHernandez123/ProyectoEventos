@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAPPY PLANNER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="imagenes/icono.png" type="image/png" />
+  </head>
+  <body class="bg-[#E8D1D2] text-gray-800 font-sans">
+    <header
+      class="bg-[#B48989] flex justify-between items-center px-6 py-4 rounded-b-lg fixed top-0 left-0 w-full z-50 shadow-md"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="imagenes/logoflor.png"
+          alt="Logo"
+          class="w-8 h-8 rounded-xl"
+        />
+        <h1 class="text-white text-lg font-serif tracking-wide">
+          HAPPY PLANNER
+        </h1>
+      </div>
+
+      <nav class="space-x-6 text-white font-medium">
+        <a href="index.html" class="underline">HOME</a>
+        <a href="registro.html" class="hover:underline">REGÍSTRATE</a>
+        <a href="contacto.html" class="hover:underline">CONTACTO</a>
+      </nav>
+    </header>
+
+    <main class="flex flex-col items-center text-center mt-28 mb-20 px-4">
+      <h2 class="text-4xl md:text-5xl font-serif mb-6 text-[#B48989]">
+        Todo lo que buscas para tu evento lo encontrarás aquí...
+      </h2>
+      <p class="text-gray-700 mb-12 max-w-xl">
+        Bodas, XV años y fiestas infantiles planeadas con amor, estilo y
+        atención a cada detalle.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Boda -->
+        <div class="flex flex-col items-center">
+          <img
+            src="imagenes/boda.png"
+            alt="Boda"
+            class="rounded-2xl shadow-lg hover:scale-105 transition w-72 h-56 object-cover"
+          />
+          <p class="mt-4 text-[#B48989] font-semibold">Bodas</p>
+          <a
+            href="bodas.html"
+            class="mt-2 text-[#B48989] hover:text-gray-700 transition text-sm flex items-center gap-1"
+          >
+            Ver más <span>➜</span>
+          </a>
+        </div>
+
+        <!-- XV -->
+        <div class="flex flex-col items-center">
+          <img
+            src="imagenes/XV.png"
+            alt="XV Años"
+            class="rounded-2xl shadow-lg hover:scale-105 transition w-72 h-56 object-cover"
+          />
+          <p class="mt-4 text-[#B48989] font-semibold">XV Años</p>
+          <a
+            href="xv.html"
+            class="mt-2 text-[#B48989] hover:text-gray-700 transition text-sm flex items-center gap-1"
+          >
+            Ver más <span>➜</span>
+          </a>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <img
+            src="imagenes/Infan.png"
+            alt="Fiestas Infantiles"
+            class="rounded-2xl shadow-lg hover:scale-105 transition w-72 h-56 object-cover"
+          />
+          <p class="mt-4 text-[#B48989] font-semibold">Fiestas Infantiles</p>
+          <a
+            href="infantiles.html"
+            class="mt-2 text-[#B48989] hover:text-gray-700 transition text-sm flex items-center gap-1"
+          >
+            Ver más <span>➜</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#B48989] text-center py-6 text-white">
+      <p class="text-sm">2025 Happy Planner. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Planner - XV Años</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="imagenes/icono.png" type="image/png" />
+
+    <style>
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .lightbox.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .lightbox-close:hover {
+        color: #f1e6f9;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#F3E5F5] text-gray-800 font-sans">
+    <header
+      class="bg-[#B48989] flex justify-between items-center px-6 py-4 rounded-b-lg fixed top-0 left-0 w-full z-50 shadow-md"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="imagenes/logoflor.png"
+          alt="Logo"
+          class="w-8 h-8 rounded-xl"
+        />
+        <h1 class="text-white text-lg font-serif tracking-wide">
+          HAPPY PLANNER
+        </h1>
+      </div>
+
+      <nav class="space-x-6 text-white font-medium">
+        <a href="index.html" class="hover:underline">HOME</a>
+        <a href="registro.html" class="hover:underline">REGÍSTRATE</a>
+        <a href="contacto.html" class="hover:underline">CONTACTO</a>
+      </nav>
+    </header>
+
+    <main
+      class="max-w-7xl mx-auto px-6 py-20 mt-28 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div class="text-gray-700 leading-relaxed">
+        <h2 class="text-4xl font-serif text-[#B48989] mb-6">
+          XV Años de Ensueño
+        </h2>
+        <p class="mb-6">
+          En Happy Planner convertimos tu sueño en una noche mágica llena de
+          luces, música y glamour. Tus XV son una celebración única y queremos
+          que vivas una experiencia digna de una princesa moderna.
+        </p>
+        <p class="mb-6">
+          Creamos ambientes elegantes con toques de fantasía, flores, brillos y
+          colores que reflejan tu personalidad. Nos encargamos de todo para que
+          tú solo disfrutes tu gran momento.
+        </p>
+        <p class="mb-8">
+          Cada evento es diseñado con amor, creatividad y dedicación. Nos
+          inspiran tus sueños y nos emociona hacerlos realidad.
+        </p>
+        <a
+          href="registro.html"
+          class="bg-[#B48989] text-white px-6 py-2 rounded-full font-medium hover:bg-[#a06d6d] transition"
+        >
+          Planea tus XV con nosotros
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <img
+          src="imagenes/xv4.png"
+          alt="XV 1"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/xv2.png"
+          alt="XV 2"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/xv1.png"
+          alt="XV 3"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/xv3.png"
+          alt="XV 4"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+      </div>
+    </main>
+
+    <section class="bg-[#E8D1D2]/40 py-12 text-center">
+      <h3 class="text-2xl font-serif text-[#B48989] mb-4">
+        ¡Haz que tu historia brille con estilo y elegancia!
+      </h3>
+      <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Nuestro equipo te acompaña en cada paso: diseño del evento, maquillaje,
+        fotografía, decoración y coreografía.
+        <br /><br />
+        Con Happy Planner, tu fiesta será recordada por su belleza, su magia y
+        la sonrisa que tú llevarás ese día. <br /><br />
+        ¡Porque cada princesa merece un cuento hecho realidad!
+      </p>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="Vista ampliada" id="lightboxImg" />
+    </div>
+
+    <footer class="bg-[#C79AC9] text-center py-6 text-white mt-12">
+      <p>2025 Happy Planner. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      const images = document.querySelectorAll(".lightbox-image");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

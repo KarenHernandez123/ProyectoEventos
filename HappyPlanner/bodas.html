@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Planner - Bodas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="imagenes/icono.png" type="image/png" />
+
+    <style>
+      /* 🔹 Estilos del Lightbox */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .lightbox.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .lightbox-close:hover {
+        color: #e8d1d2;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800 font-sans">
+    <header
+      class="bg-[#B48989] flex justify-between items-center px-6 py-4 rounded-b-lg fixed top-0 left-0 w-full z-50 shadow-md"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="imagenes/logoflor.png"
+          alt="Logo"
+          class="w-8 h-8 rounded-xl"
+        />
+        <h1 class="text-white text-lg font-serif tracking-wide">
+          HAPPY PLANNER
+        </h1>
+      </div>
+
+      <nav class="space-x-6 text-white font-medium">
+        <a href="index.html" class="hover:underline">HOME</a>
+        <a href="registro.html" class="hover:underline">REGÍSTRATE</a>
+        <a href="contacto.html" class="hover:underline">CONTACTO</a>
+      </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-16 mt-28">
+      <h2 class="text-4xl font-serif text-center text-[#B48989] mb-6">
+        Nuestras Bodas
+      </h2>
+
+      <p
+        class="text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed"
+      >
+        En Happy Planner creemos que una boda no es solo un evento: es un
+        momento único que marca el inicio de una nueva etapa.
+        <br /><br />
+        Nos encargamos de que cada boda sea tan especial como las personas que
+        la protagonizan. Desde el concepto inicial hasta el último detalle del
+        banquete, trabajamos para crear experiencias llenas de amor, elegancia y
+        emoción.
+        <br /><br />
+        Estas son algunas de las bodas que hemos organizado con pasión, cuidado
+        y dedicación. Cada una refleja una historia de amor diferente, con su
+        propio estilo y magia.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img
+          src="imagenes/boda1.png"
+          alt="Boda 1"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/boda2.png"
+          alt="Boda 2"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/boda3.png"
+          alt="Boda 3"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/boda4.png"
+          alt="Boda 4"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/boda5.png"
+          alt="Boda 5"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/boda6.png"
+          alt="Boda 6"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+      </div>
+
+      <div
+        class="text-center mt-12 max-w-3xl mx-auto text-gray-700 leading-relaxed"
+      >
+        <h3 class="text-2xl font-serif text-[#B48989] mb-4">
+          Creamos momentos que duran toda la vida
+        </h3>
+        <p>
+          Nuestro equipo de expertos trabaja contigo para diseñar la boda de tus
+          sueños, cuidando cada detalle: desde la decoración y el banquete hasta
+          la música, la iluminación y la coordinación completa del evento.
+          <br /><br />
+          Nos apasiona crear ambientes mágicos donde cada pareja pueda disfrutar
+          de su gran día sin preocupaciones. Con nosotros, no solo planeas una
+          boda... creas un recuerdo eterno.
+        </p>
+
+        <p class="mt-8 text-[#B48989] font-semibold text-lg">
+          ¿Lista para hacer realidad tu historia de amor?
+          <br />
+          <a href="registro.html" class="underline hover:text-gray-700">
+            Contáctanos y empieza a planear tu boda perfecta.
+          </a>
+        </p>
+      </div>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="Vista ampliada" id="lightboxImg" />
+    </div>
+
+    <footer class="bg-[#B48989] text-center py-6 text-white mt-16">
+      <p>2025 Happy Planner. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      const images = document.querySelectorAll(".lightbox-image");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

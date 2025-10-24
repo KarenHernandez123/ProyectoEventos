@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Planner - Contacto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="imagenes/icono.png" type="image/png" />
+  </head>
+
+  <body class="bg-[#E8D1D2] text-gray-800 font-sans">
+    <!-- 🔸 Menú fijo superior -->
+    <header
+      class="bg-[#B48989] flex justify-between items-center px-6 py-4 rounded-b-lg fixed top-0 left-0 w-full z-50 shadow-md"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="imagenes/logoflor.png"
+          alt="Logo"
+          class="w-8 h-8 rounded-xl"
+        />
+        <h1 class="text-white text-lg font-serif tracking-wide">
+          HAPPY PLANNER
+        </h1>
+      </div>
+
+      <nav class="space-x-6 text-white font-medium">
+        <a href="index.html" class="hover:underline">HOME</a>
+        <a href="registro.html" class="hover:underline">REGÍSTRATE</a>
+        <a href="contacto.html" class="underline">CONTACTO</a>
+      </nav>
+    </header>
+
+    <main
+      class="max-w-5xl mx-auto px-6 py-16 mt-28 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div>
+        <h2 class="text-3xl font-serif text-[#B48989] mb-6">
+          Ponte en contacto con nosotros
+        </h2>
+        <p class="text-gray-700 mb-8">
+          Cuéntanos sobre tu evento, solicita una cotización o resuelve tus
+          dudas. ¡Estamos felices de ayudarte a planear un día inolvidable!
+        </p>
+
+        <form class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold mb-1">Nombre:</label>
+            <input
+              type="text"
+              placeholder="Tu nombre completo"
+              class="w-full border border-[#B48989] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#B48989]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1"
+              >Correo electrónico:</label
+            >
+            <input
+              type="email"
+              placeholder="tucorreo@ejemplo.com"
+              class="w-full border border-[#B48989] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#B48989]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">Mensaje:</label>
+            <textarea
+              placeholder="Cuéntanos cómo podemos ayudarte..."
+              class="w-full border border-[#B48989] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#B48989] h-28"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-[#B48989] hover:bg-[#9e7a7a] text-white px-6 py-2 rounded-full font-medium transition"
+          >
+            Enviar mensaje ➜
+          </button>
+        </form>
+      </div>
+
+      <div class="text-center md:text-left">
+        <img
+          src="imagenes/contacto.png"
+          alt="Eventos elegantes"
+          class="rounded-3xl shadow-lg mb-6"
+        />
+        <h3 class="text-2xl font-serif text-[#B48989] mb-4">
+          También puedes encontrarnos en:
+        </h3>
+        <p class="text-gray-700 mb-2">
+          <strong>Dirección:</strong> Av. de los Sueños 456, Jalisco
+        </p>
+        <p class="text-gray-700 mb-2">
+          <strong>Teléfono:</strong> +52 55 7890 1234
+        </p>
+        <p class="text-gray-700 mb-4">
+          <strong>Email:</strong>
+          <a
+            href="mailto:hola@happyplanner.com"
+            class="text-[#B48989] hover:underline"
+            >hola@happyplanner.com</a
+          >
+        </p>
+        <div
+          class="flex justify-center md:justify-start gap-4 mt-4 text-[#B48989]"
+        >
+          <a href="#" class="hover:text-gray-700">Instagram</a>
+          <a href="#" class="hover:text-gray-700">Facebook</a>
+          <a href="#" class="hover:text-gray-700">TikTok</a>
+        </div>
+      </div>
+    </main>
+
+    <section class="bg-[#B48989]/20 py-12 text-center">
+      <h3 class="text-2xl font-serif text-[#B48989] mb-4">
+        ¡Nos encanta escuchar tus ideas!
+      </h3>
+      <p class="text-gray-700 max-w-2xl mx-auto">
+        Nuestro equipo está listo para ayudarte a hacer realidad el evento que
+        siempre imaginaste. Cuéntanos tus planes y déjanos hacerlo posible.
+      </p>
+    </section>
+    <footer class="bg-[#B48989] text-center py-6 text-white">
+      <p>
+        ¿Tienes dudas? Escríbenos a
+        <a
+          href="mailto:hola@happyplanner.com"
+          class="font-semibold underline hover:text-[#E8D1D2]"
+          >hola@happyplanner.com</a
+        >
+      </p>
+      <p class="mt-2 text-sm">
+        Síguenos:
+        <a href="#" class="hover:text-[#E8D1D2] ml-1">Instagram</a> •
+        <a href="#" class="hover:text-[#E8D1D2]">Facebook</a> •
+        <a href="#" class="hover:text-[#E8D1D2]">TikTok</a>
+      </p>
+      <p class="mt-4 text-xs opacity-90">
+        2025 Happy Planner. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>

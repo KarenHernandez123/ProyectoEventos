@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Planner - Fiestas Infantiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="imagenes/icono.png" type="image/png" />
+
+    <style>
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .lightbox.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 1rem;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .lightbox-close:hover {
+        color: #f1e6f9;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#E8FAF9] text-gray-800 font-sans">
+    <!-- 🔸 Menú fijo (sin cambios de color) -->
+    <header
+      class="bg-[#B48989] flex justify-between items-center px-6 py-4 rounded-b-lg fixed top-0 left-0 w-full z-50 shadow-md"
+    >
+      <div class="flex items-center space-x-2">
+        <img
+          src="imagenes/logoflor.png"
+          alt="Logo"
+          class="w-8 h-8 rounded-xl"
+        />
+        <h1 class="text-white text-lg font-serif tracking-wide">
+          HAPPY PLANNER
+        </h1>
+      </div>
+
+      <nav class="space-x-6 text-white font-medium">
+        <a href="index.html" class="hover:underline">HOME</a>
+        <a href="registro.html" class="hover:underline">REGÍSTRATE</a>
+        <a href="contacto.html" class="hover:underline">CONTACTO</a>
+      </nav>
+    </header>
+
+    <main
+      class="max-w-7xl mx-auto px-6 py-20 mt-28 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div class="order-1 md:order-1 grid grid-cols-2 gap-4">
+        <img
+          src="imagenes/infantil1.png"
+          alt="Fiesta 1"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/infantil4.png"
+          alt="Fiesta 2"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/infantil3.png"
+          alt="Fiesta 3"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+        <img
+          src="imagenes/infantil2.png"
+          alt="Fiesta 4"
+          class="rounded-xl shadow-lg hover:scale-105 transition cursor-pointer lightbox-image"
+        />
+      </div>
+
+      <div class="order-2 md:order-2 text-gray-700 leading-relaxed">
+        <h2 class="text-4xl font-serif text-[#B48989] mb-6">
+          Fiestas Infantiles
+        </h2>
+        <p class="mb-6">
+          En Happy Planner hacemos que los sueños de los más pequeños se
+          conviertan en aventuras llenas de diversión, colores y magia.
+        </p>
+        <p class="mb-6">
+          Creamos ambientes temáticos, llenos de juegos, decoración creativa y
+          actividades que harán que cada niño viva un día inolvidable.
+        </p>
+        <p class="mb-8">
+          Cada fiesta es diseñada con amor y alegría, pensando en la sonrisa y
+          felicidad de tu hijo.
+        </p>
+        <a
+          href="registro.html"
+          class="bg-[#B48989] text-white px-6 py-2 rounded-full font-medium hover:bg-[#] transition"
+        >
+          Planea la fiesta perfecta
+        </a>
+      </div>
+    </main>
+
+    <section class="bg-[#E8D1D2]/40 py-12 text-center">
+      <h3 class="text-2xl font-serif text-[#B48989] mb-4">
+        ¡Momentos mágicos que se recuerdan para siempre!
+      </h3>
+      <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Nuestro equipo acompaña cada paso: decoración, actividades, pasteles
+        temáticos y entretenimiento.
+        <br /><br />
+        Con Happy Planner, cada fiesta infantil se convierte en una experiencia
+        inolvidable llena de diversión, risas y alegría.
+        <br /><br />
+        ¡Porque cada niño merece una celebración mágica!
+      </p>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="Vista ampliada" id="lightboxImg" />
+    </div>
+
+    <footer class="bg-[#B48989] text-center py-6 text-white mt-12">
+      <p>2025 Happy Planner. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      const images = document.querySelectorAll(".lightbox-image");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxClose = document.getElementById("lightboxClose");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          lightboxImg.src = img.src;
+        });
+      });
+
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
